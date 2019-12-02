@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Kotlin Application</string>
+    <string name="cámara">Cámara</string>
+    <string name="google_es">Google.es</string>
+    <string name="llamar112">Llamar 112</string>
+    <string name="volver">Volver</string>
+    <string name="textview">TextView</string>
+</resources>
