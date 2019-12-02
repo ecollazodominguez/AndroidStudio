@@ -2,6 +2,7 @@ package com.example.mykotlinapplication
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.singleTop
+import org.jetbrains.anko.toast
 import java.time.Duration
 
 const val CALC_REQUEST = 1  // The request code
@@ -21,19 +23,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btnAzul.setOnClickListener{abrirActivity2(it)}
-        btnVerde.setOnClickListener{abrirActivity2(it)}
-        btnCalc.setOnClickListener {  abrirActivityCalc(it)}
+        btnAzul.setOnClickListener { abrirActivity2(it) }
+        btnVerde.setOnClickListener { abrirActivity2(it) }
+        btnCalc.setOnClickListener { abrirActivityCalc(it) }
 
     }
 
 
-    fun abrirActivity2(v: View){
+    fun abrirActivity2(v: View) {
         val btn = v as Button
         startActivity(intentFor<Main2Activity>("color" to btn.text).singleTop())
 
     }
-    fun abrirActivityCalc(v: View){
+
+    fun abrirActivityCalc(v: View) {
         var num1 = a1num1.text
         var num2 = a1num2.text
 
@@ -49,8 +52,7 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, CALC_REQUEST)
 
 
-
-        }catch (nfe: NumberFormatException){
+        } catch (nfe: NumberFormatException) {
             Toast.makeText(this, "Numero Invalido", Toast.LENGTH_SHORT)
         }
 
@@ -63,10 +65,12 @@ class MainActivity : AppCompatActivity() {
             // Make sure the request was successful
             if (resultCode == Activity.RESULT_OK) {
 
-                val result =data?.getIntExtra("result", 0)
+                val result = data?.getIntExtra("result", 0)
                 resultado.text = result.toString()
 
             }
+
+
         }
     }
 }

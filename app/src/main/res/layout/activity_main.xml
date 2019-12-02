@@ -6,11 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/foto4"
+        android:layout_width="240dp"
+        android:layout_height="203dp"
+        android:contentDescription="@string/foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
+
     <TextView
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.823"
@@ -23,18 +34,20 @@
         android:id="@+id/btnAzul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Azul"
+        android:text="@string/azul"
+        app:layout_constraintBottom_toTopOf="@+id/a1num1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
         android:id="@+id/btnVerde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Verde"
+        android:text="@string/verde"
+        app:layout_constraintBottom_toTopOf="@+id/a1num1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnAzul"
@@ -49,7 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toEndOf="@+id/a1num1"
-        app:layout_constraintTop_toTopOf="@+id/a1num1" />
+        app:layout_constraintTop_toTopOf="@+id/a1num1"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/a1num1"
@@ -58,15 +72,17 @@
         android:layout_marginTop="188dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="27dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="Calcular"
+        android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
