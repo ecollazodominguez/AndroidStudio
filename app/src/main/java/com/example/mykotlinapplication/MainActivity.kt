@@ -5,9 +5,11 @@ import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.singleTop
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         btnAzul.setOnClickListener { abrirActivity2(it) }
         btnVerde.setOnClickListener { abrirActivity2(it) }
         btnCalc.setOnClickListener { abrirActivityCalc(it) }
+        Log.w("MisMensajes","Estoy en OnCreate")
 
     }
 
@@ -72,5 +75,26 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.w("MisMensajes","Estoy en OnStart")
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.w("MisMensajes","Estoy en OnResume")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.w("MisMensajes","Estoy en OnPause")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.w("MisMensajes","Estoy en OnStop")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.w("MisMensajes","Estoy en OnDestroy")
     }
 }
